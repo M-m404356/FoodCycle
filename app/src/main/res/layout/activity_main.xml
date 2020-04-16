@@ -8,14 +8,14 @@
 
     <Button
         android:id="@+id/haveFood"
-        android:layout_width="164dp"
+        android:layout_width="409dp"
         android:layout_height="112dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginLeft="123dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="491dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="128dp"
         android:text="I Have Food"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,14 +26,14 @@
 
     <Button
         android:id="@+id/needFood"
-        android:layout_width="164dp"
+        android:layout_width="409dp"
         android:layout_height="112dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginLeft="123dp"
-        android:layout_marginTop="544dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="603dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="16dp"
         android:text="I Need Food"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,10 +42,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:srcCompat="@drawable/blocki"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="78dp" />
+        android:layout_width="441dp"
+        android:layout_height="563dp"
+        android:layout_marginBottom="168dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/i_mark_bold" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

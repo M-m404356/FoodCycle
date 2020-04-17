@@ -12,8 +12,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.maps.GoogleMap;
+
 public class MainActivity extends AppCompatActivity {
     private Button haveFood;
+    private Bundle savedInstanceState;
+    private GoogleMap areamap;
 
     private Button needFood;
 
@@ -44,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(needFoodURL));
                 startActivity(i);
+                //creates a map that has the locations of all of the people with food saved
+                //in it-- will center around the current user's location
+                WantFood startFoodMap = new WantFood()
+                //MapsActivity foodMap = new MapsActivity(Bundle savedInstanceState);
+
             }
         });
     }

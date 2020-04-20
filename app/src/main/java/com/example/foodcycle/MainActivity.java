@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button needFood;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -40,18 +40,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        final Intent startMap = new Intent(this, MapsActivity.class);
         needFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 needFood.setBackgroundColor(Color.BLUE);
-                String needFoodURL = "https://forms.gle/bKh9EDXAAGPPXwSS7";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(needFoodURL));
-                startActivity(i);
+                startActivity(startMap);
+
+
+
+                //startfoodSearch.onCreate(savedInstanceState);
+
+                //needFood.setOnEditorActionListener(e );
+
+
+                //Intent x = new Intent(Intent.);
+                //String needFoodURL = "https://forms.gle/bKh9EDXAAGPPXwSS7";
+                //Intent i = new Intent(Intent.ACTION_VIEW);
+                //i.setData(Uri.parse(needFoodURL));
+               // startActivity(i);
                 //creates a map that has the locations of all of the people with food saved
-                //in it-- will center around the current user's location
-                WantFood startFoodMap = new WantFood()
-                //MapsActivity foodMap = new MapsActivity(Bundle savedInstanceState);
+                //in it-- will center around the current user's locatio
+
 
             }
         });

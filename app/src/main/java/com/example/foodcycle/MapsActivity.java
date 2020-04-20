@@ -46,4 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    public GoogleMap getmMap() {
+        return mMap;
+    }
 }

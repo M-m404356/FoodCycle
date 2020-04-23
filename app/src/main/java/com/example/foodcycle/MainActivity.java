@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private Button haveFood;
     private Bundle savedInstanceState;
     private GoogleMap areamap;
-
     private Button needFood;
 
     @Override
@@ -35,29 +34,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         final Intent startMap = new Intent(this, MapsActivity.class);
         needFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(startMap);
-
-
-
-                //startfoodSearch.onCreate(savedInstanceState);
-
-                //needFood.setOnEditorActionListener(e );
-
-
-                //Intent x = new Intent(Intent.);
-                //String needFoodURL = "https://forms.gle/bKh9EDXAAGPPXwSS7";
-                //Intent i = new Intent(Intent.ACTION_VIEW);
-                //i.setData(Uri.parse(needFoodURL));
-               // startActivity(i);
-                //creates a map that has the locations of all of the people with food saved
-                //in it-- will center around the current user's locatio
-
-
+                MapsActivity thisActivity = new MapsActivity();
+                runActivity(thisActivity);
             }
         });
     }
+    public void runActivity(MapsActivity activity) {
+        activity.onMapReady(areamap);
+    }
+
 }

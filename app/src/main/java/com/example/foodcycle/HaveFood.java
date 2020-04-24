@@ -1,4 +1,6 @@
 package com.example.foodcycle;
 
-public class HaveFood {
+import android.widget.TextView;
+
+public class HaveFood extends TextView {
 }

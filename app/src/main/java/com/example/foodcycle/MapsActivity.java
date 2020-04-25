@@ -41,23 +41,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng urbana_champaign = new LatLng(40.11, -88.24);
-        mMap.addMarker(new MarkerOptions().position(urbana_champaign).title("Urbana-Champaign"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(urbana_champaign));
 
         LatLng stoneCreek = new LatLng(40.085140, -88.208549);
         mMap.addMarker(new MarkerOptions().position(stoneCreek).title("Stone Creek Church")
-                .snippet("2502 S Race St, Urbana, IL 61801\n" + "Fridays 11:00am - 1:00pm"));
+                .snippet("2502 S Race St, Urbana, IL 61801" + " Fridays 11:00am - 1:00pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(stoneCreek));
 
         LatLng wesley = new LatLng(40.110210, -88.224780);
         mMap.addMarker(new MarkerOptions().position(wesley).title("Wesley United Methodist Church")
-                .snippet("1203 West Green Street Urbana, IL 61801\n" + "Thursdays 5:00pm - 7:00pm"));
+                .snippet("1203 West Green Street Urbana, IL 61801" + " Thursdays 5:00pm - 7:00pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(wesley));
 
         LatLng dailyBread = new LatLng(40.116930, -88.238470);
         mMap.addMarker(new MarkerOptions().position(dailyBread).title("Daily Bread Soup Kitchen")
-                .snippet("116 N 1st St, Champaign, IL 61820\n" + "Everyday 11:00am - 12:30pm"));
+                .snippet("116 N 1st St, Champaign, IL 61820" + " Everyday 11:00am - 12:30pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dailyBread));
     }
 

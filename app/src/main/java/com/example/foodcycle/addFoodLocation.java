@@ -53,7 +53,8 @@ public class addFoodLocation extends AppCompatActivity {
                     MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact));
                 }
             } catch(Exception e) {
-                System.out.println("Street Address not valid, please type address within Champaign-Urbana region");
+                submit.setBackgroundColor(Color.BLACK);
+                startActivity(mainPage);
 
             }
 

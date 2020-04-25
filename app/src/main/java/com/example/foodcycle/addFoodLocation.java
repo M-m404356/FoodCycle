@@ -2,10 +2,14 @@ package com.example.foodcycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.telephony.SmsMessage;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -14,15 +18,21 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 public class addFoodLocation extends AppCompatActivity {
+    Button submit;
+    Intent mainPage = new Intent(this, MainActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_location);
-        findViewById(R.id.Submit).setOnClickListener(new View.OnClickListener() {
+        submit = findViewById(R.id.Submit);
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getNewFoodSource();
+                submit.setBackgroundColor(Color.BLACK);
+                startActivity(mainPage);
             }
         });
         }

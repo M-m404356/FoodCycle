@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         haveFood = findViewById(R.id.haveFood);
         needFood = findViewById(R.id.needFood);
 
-        final Intent enterFoodLocation = new Intent(this, HaveFood.class);
+        final Intent enterFoodLocation = new Intent(this, addFoodLocation.class);
         haveFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 haveFood.setBackgroundColor(Color.BLUE);

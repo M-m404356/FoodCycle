@@ -64,4 +64,4 @@ public class HaveFood extends AppCompatActivity {
          //add latlng object to the map
          }
          **/
-        
+

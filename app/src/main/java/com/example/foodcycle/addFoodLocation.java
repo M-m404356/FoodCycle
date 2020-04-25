@@ -19,8 +19,7 @@ import java.util.List;
 
 public class addFoodLocation extends AppCompatActivity {
     Button submit;
-    Intent mainPage = new Intent(this, MainActivity.class);
-
+    //Intent mainPage = new Intent(this,MainActivity.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,9 +29,9 @@ public class addFoodLocation extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getNewFoodSource();
+                getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
-                startActivity(mainPage);
+                //startActivity(mainPage);
             }
         });
         }
@@ -53,8 +52,9 @@ public class addFoodLocation extends AppCompatActivity {
                     MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact));
                 }
             } catch(Exception e) {
-                submit.setBackgroundColor(Color.BLACK);
-                startActivity(mainPage);
+                return;
+                //submit.setBackgroundColor(Color.BLACK);
+                //startActivity(mainPage);
 
             }
 

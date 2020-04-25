@@ -28,10 +28,10 @@
         android:inputType="textPostalAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intro"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <EditText
         android:id="@+id/contact_name"
@@ -42,40 +42,30 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intro"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="292dp"
-        android:layout_height="278dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro"
-        app:layout_constraintVertical_bias="0.64"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <EditText
         android:id="@+id/more_feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
         android:ems="10"
         android:hint="@string/additional_info_prompt"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/calendarView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintTop_toBottomOf="@+id/intro" />
 
     <Button
         android:id="@+id/Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="623dp"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="333dp"
         tools:text="Submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@ public class addFoodLocation extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getNewFoodSource();
+                //getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
                 startActivity(mainPage);
             }

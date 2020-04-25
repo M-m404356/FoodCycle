@@ -16,8 +16,6 @@ import com.google.android.gms.maps.GoogleMap;
 
 public class MainActivity extends AppCompatActivity {
     private Button haveFood;
-    private Bundle savedInstanceState;
-    private GoogleMap areamap;
 
     private Button needFood;
 

@@ -19,9 +19,9 @@ import java.util.List;
 
 public class addFoodLocation extends AppCompatActivity {
     Button submit;
-    //Intent mainPage = new Intent(this,MainActivity.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final Intent thankspage = new Intent(this, After_Havefood.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_location);
@@ -29,8 +29,11 @@ public class addFoodLocation extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
+                startActivity(thankspage);
+
                 //startActivity(mainPage);
             }
         });
@@ -46,14 +49,15 @@ public class addFoodLocation extends AppCompatActivity {
             try {
                 List<Address> foodsources = new Geocoder(this).getFromLocationName(foodPickuplocation, 1);
                 if (foodsources.size() > 0) {
+                    System.out.println("foodsource");
                     double latitude = foodsources.get(0).getLatitude();
                     double longitude = foodsources.get(0).getLongitude();
                     LatLng foodSource = new LatLng(latitude, longitude);
                     MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact));
                 }
             } catch(Exception e) {
-                return;
-                //submit.setBackgroundColor(Color.BLACK);
+
+                submit.setBackgroundColor(Color.BLACK);
                 //startActivity(mainPage);
 
             }

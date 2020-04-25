@@ -14,4 +14,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name ="location_prompt">"Street address for food pick-up"</string>
+    <string name ="name_prompt">"Contact name"</string>
+    <string name ="email_prompt">"Contact email"</string>
+    <string name ="additional_info_prompt">"Any additional detail?"</string>
 </resources>

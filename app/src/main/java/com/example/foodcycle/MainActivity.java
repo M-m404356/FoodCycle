@@ -29,13 +29,11 @@ public class MainActivity extends AppCompatActivity {
         haveFood = findViewById(R.id.haveFood);
         needFood = findViewById(R.id.needFood);
 
+        final Intent enterFoodLocation = new Intent(this, HaveFood.class);
         haveFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 haveFood.setBackgroundColor(Color.BLUE);
-                String haveFoodURL = "https://forms.gle/gW3oY1rgJb9CfPFMA";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(haveFoodURL));
-                startActivity(i);
+                startActivity(enterFoodLocation);
             }
         });
 

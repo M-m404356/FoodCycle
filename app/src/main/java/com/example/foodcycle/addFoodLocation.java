@@ -1,16 +1,15 @@
 package com.example.foodcycle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.telephony.SmsMessage;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -29,10 +28,10 @@ public class addFoodLocation extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
                 startActivity(thankspage);
+                finish();
 
                 //startActivity(mainPage);
             }
@@ -45,6 +44,12 @@ public class addFoodLocation extends AppCompatActivity {
 
             EditText location = (EditText) findViewById(R.id.food_pickup);
             String foodPickuplocation = location.getText().toString();
+
+            if (name.length() == 0 || location.length() == 0) {
+                final Intent thankspage = new Intent(this, After_Havefood.class);
+                startActivity(thankspage);
+                finish();
+            }
 
             try {
                 List<Address> foodsources = new Geocoder(this).getFromLocationName(foodPickuplocation, 1);

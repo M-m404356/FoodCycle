@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -16,6 +17,11 @@ import java.util.List;
 
 public class HaveFood extends AppCompatActivity {
     LatLng foodSource;
+    private double westBoundary;
+    private double eastBoundary;
+    private double northBoundary;
+    private double southBoundary;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +34,15 @@ public class HaveFood extends AppCompatActivity {
                 getNewFoodSource();
             }
         });
+        westBoundary = -88.304951;
+        eastBoundary = -88.162320;
+        southBoundary = 40.069607;
+        northBoundary = 40.150936;
     }
 
 
     public void getNewFoodSource() {
-        EditText name = (EditText) findViewById(R.id.contact_name);
+        EditText name = (EditText) findViewById(R.id.organizationName);
         String nameContact = name.getText().toString();
 
         EditText location = (EditText) findViewById(R.id.food_pickup);
@@ -43,12 +53,25 @@ public class HaveFood extends AppCompatActivity {
             if (foodsources.size() > 0) {
                 double latitude = foodsources.get(0).getLatitude();
                 double longitude = foodsources.get(0).getLongitude();
-                foodSource = new LatLng(latitude, longitude);
-                MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact)
-                        .snippet(foodPickuplocation));
+                if ((latitude >= southBoundary && latitude <= northBoundary) && (longitude >= westBoundary && longitude <= eastBoundary)) {
+                    foodSource = new LatLng(latitude, longitude);
+                    MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact)
+                            .snippet(foodPickuplocation));
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Street Address not valid, please type address within Champaign-Urbana region")
+                            .setView(View.VISIBLE);
+                    builder.setOnDismissListener(unused -> finish());
+                    builder.create().show();
+                }
+
             }
         } catch (Exception e) {
-            System.out.println("Street Address not valid, please type address within Champaign-Urbana region");
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Street Address not valid, please type address within Champaign-Urbana region")
+                    .setView(View.VISIBLE);
+            builder.setOnDismissListener(unused -> finish());
+            builder.create().show();
 
         }
 

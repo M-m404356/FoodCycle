@@ -20,8 +20,7 @@ public class After_Havefood extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
                 Intent returnHome = new Intent("android.intent.action.MAIN");
-                startActivity(returnHome);
-                finish();
+;               startActivity(returnHome);
             }
         });
     }

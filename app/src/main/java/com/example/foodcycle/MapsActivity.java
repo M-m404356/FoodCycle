@@ -8,11 +8,13 @@ import android.widget.Button;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -31,18 +33,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        submit = findViewById(R.id.Submit);
-        final Intent enterFoodLocation = new Intent(this, addFoodLocation.class);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                submit.setBackgroundColor(Color.BLACK);
-                //startActivity(thankspage);
-                //finish();
+        //submit = findViewById(R.id.Submit);
+        //final Intent enterFoodLocation = new Intent(this, addFoodLocation.class);
+        //submit.setOnClickListener(new View.OnClickListener() {
+        // @Override
+        //public void onClick(View v) {
+        //submit.setBackgroundColor(Color.BLACK);
+        //startActivity(thankspage);
+        //finish();
 
-                //startActivity(mainPage);
-            }
-        });
+        //startActivity(mainPage);
+    //}
+       // });
 
 
 
@@ -62,8 +64,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        LatLng southWestCU = new LatLng(40.06032, -88.3436);
+        LatLng northEastCU = new LatLng(40.167, -88.14908);
+        int width = getResources().getDisplayMetrics().widthPixels;
+        int height = getResources().getDisplayMetrics().heightPixels;
+        int padding = (int) (width * 0.15);
+
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        builder.include(southWestCU);
+        builder.include(northEastCU);
+        LatLngBounds bounds = builder.build();
+
 
         mMap = googleMap;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding));
 
         // Add a marker in Sydney and move the camera
 

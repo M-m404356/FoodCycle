@@ -13,7 +13,6 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class addFoodLocation extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                finish();
+                //finish();
                 getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
                 startActivity(thanksPage);

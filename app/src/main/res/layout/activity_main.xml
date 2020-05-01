@@ -8,14 +8,14 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/haveFood"
+        android:id="@+id/needFoodList"
         android:layout_width="409dp"
         android:layout_height="112dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="343dp"
         android:background="#0028FF"
-        android:text="I Have Food"
+        android:text="Local Food Pantries (List)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp"
         android:visibility="visible"
@@ -24,14 +24,14 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/needFood"
+        android:id="@+id/needFoodMap"
         android:layout_width="409dp"
         android:layout_height="112dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="467dp"
         android:background="#0028FF"
-        android:text="I Need Food"
+        android:text="Local Food Pantries (Map)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +41,28 @@
         android:id="@+id/textView"
         android:layout_width="408dp"
         android:layout_height="148dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="49dp"
         android:background="#00FFFFFF"
         android:text="FoodCycle"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="10sp"
         app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/foodForm"
+        android:layout_width="409dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="216dp"
+        android:background="#0227FF"
+        android:text="If you are affiliated with a local food pantry, please fill out this form!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

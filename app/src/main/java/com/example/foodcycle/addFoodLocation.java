@@ -19,45 +19,44 @@ import java.util.List;
 public class addFoodLocation extends AppCompatActivity {
     Button submit;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final Intent thankspage = new Intent(this, After_Havefood.class);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_location);
         submit = findViewById(R.id.Submit);
+        Intent thanksPage = new Intent(this, After_Havefood.class);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getNewFoodSource();
                 submit.setBackgroundColor(Color.BLACK);
-                //startActivity(thankspage);
-                //finish();
+                finish();
 
-                //startActivity(mainPage);
+                startActivity(thanksPage);
+
             }
         });
 
     }
 
 
-    public LatLng getNewFoodSource() {
-        EditText name = (EditText) findViewById(R.id.contact_name);
+    public void getNewFoodSource() {
+        EditText name =  findViewById(R.id.contact_name);
         String nameContact = name.getText().toString();
 
-        EditText location = (EditText) findViewById(R.id.food_pickup);
+        EditText location = findViewById(R.id.food_pickup);
         String foodPickuplocation = location.getText().toString();
 
-        EditText extraInfo = (EditText) findViewById(R.id.pickupTime);
+        EditText extraInfo =  findViewById(R.id.pickupTime);
         String pickupTime = extraInfo.getText().toString();
 
 
-        if (name.length() == 0 || location.length() == 0) {
-            final Intent thankspage = new Intent(this, After_Havefood.class);
-            startActivity(thankspage);
-            finish();
-        }
+        //if (name.length() == 0 || location.length() == 0) {
+           // final Intent thankspage = new Intent(this, After_Havefood.class);
+           // startActivity(thankspage);
+            //finish();
+        //}
 
         try {
             List<Address> foodsources = new Geocoder(this).getFromLocationName(foodPickuplocation, 1);
@@ -65,17 +64,11 @@ public class addFoodLocation extends AppCompatActivity {
             double longitude = foodsources.get(0).getLongitude();
             LatLng foodSource = new LatLng(latitude, longitude);
             MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact).snippet(pickupTime));
-            return foodSource;
         } catch (Exception e) {
-            e.printStackTrace();
-        //startActivity(mainPage);
+            //e.printStackTrace();
+            //startActivity(mainPage);
+        }
     }
-        return null;
-
-
-
-    }
-
 
 }
 

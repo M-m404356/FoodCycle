@@ -42,7 +42,7 @@ public class addFoodLocation extends AppCompatActivity {
 
 
     public void getNewFoodSource() {
-        EditText name =  findViewById(R.id.contact_name);
+        EditText name =  findViewById(R.id.organizationName);
         String nameContact = name.getText().toString();
 
         EditText location = findViewById(R.id.food_pickup);

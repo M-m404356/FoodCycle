@@ -1,4 +1,4 @@
-package com.example.foodcycle;
+/**package com.example.foodcycle;
 
 import android.view.View;
 
@@ -15,5 +15,6 @@ public class WantFood extends FragmentActivity {
         foodMap.onMapReady(foodLocations);
     }
 }
+ */
 
 

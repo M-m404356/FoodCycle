@@ -1,7 +1,6 @@
 package com.example.foodcycle;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         final Intent enterFoodLocation = new Intent(this, addFoodLocation.class);
         haveFood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                haveFood.setBackgroundColor(Color.BLUE);
                 startActivity(enterFoodLocation);
+
             }
         });
 
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         needFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                needFood.setBackgroundColor(Color.BLUE);
                 startActivity(startMap);
 
             }

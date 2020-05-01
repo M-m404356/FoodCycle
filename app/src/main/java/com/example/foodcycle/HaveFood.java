@@ -1,4 +1,5 @@
-package com.example.foodcycle;
+
+/**package com.example.foodcycle;
 
 import android.location.Address;
 import android.location.Geocoder;
@@ -17,11 +18,6 @@ import java.util.List;
 
 public class HaveFood extends AppCompatActivity {
     LatLng foodSource;
-    private double westBoundary;
-    private double eastBoundary;
-    private double northBoundary;
-    private double southBoundary;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +30,6 @@ public class HaveFood extends AppCompatActivity {
                 getNewFoodSource();
             }
         });
-        westBoundary = -88.304951;
-        eastBoundary = -88.162320;
-        southBoundary = 40.069607;
-        northBoundary = 40.150936;
     }
 
 
@@ -48,39 +40,39 @@ public class HaveFood extends AppCompatActivity {
         EditText location = (EditText) findViewById(R.id.food_pickup);
         String foodPickuplocation = location.getText().toString();
 
+        Geocoder coder = new Geocoder(this);
+        List<Address> foodsources;
         try {
-            List<Address> foodsources = new Geocoder(this).getFromLocationName(foodPickuplocation, 1);
-            if (foodsources.size() > 0) {
-                double latitude = foodsources.get(0).getLatitude();
-                double longitude = foodsources.get(0).getLongitude();
-                if ((latitude >= southBoundary && latitude <= northBoundary) && (longitude >= westBoundary && longitude <= eastBoundary)) {
-                    foodSource = new LatLng(latitude, longitude);
-                    MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact)
-                            .snippet(foodPickuplocation));
-                } else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Street Address not valid, please type address within Champaign-Urbana region")
-                            .setView(View.VISIBLE);
-                    builder.setOnDismissListener(unused -> finish());
-                    builder.create().show();
-                }
-
+            foodsources = coder.getFromLocationName(foodPickuplocation, 1);
+            if (foodsources == null) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Please enter a valid street address")
+                        .setView(View.VISIBLE);
+                builder.setOnDismissListener(unused -> finish());
+                builder.create().show();
             }
+            double latitude = foodsources.get(0).getLatitude();
+            double longitude = foodsources.get(0).getLongitude();
+            foodSource = new LatLng(latitude, longitude);
+            MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact)
+                    .snippet(foodPickuplocation));
         } catch (Exception e) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Street Address not valid, please type address within Champaign-Urbana region")
+            builder.setMessage("Please enter a valid street address")
                     .setView(View.VISIBLE);
             builder.setOnDismissListener(unused -> finish());
             builder.create().show();
 
         }
-
-
     }
+
+}
+
+
 
     //onTextchanged store new location as the name in associationw itht eh contact information
     //use Geomaps API to turn the stated location into a lat lng opbject
     //add latlng object to the map
-}
+ */
 
 

@@ -94,9 +94,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .snippet("116 N 1st St, Champaign, IL 61820" + " Everyday 11:00am - 12:30pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dailyBread));
 
-        LatLng newmanShares = new LatLng(39.7986, -87.9859);
+        LatLng newmanShares = new LatLng(40.105869, -88.229736);
         mMap.addMarker(new MarkerOptions().position(newmanShares).title("Newman Shares Food Pantry")
-                .snippet("604 F. Armory Ave. Champaign, IL 61801" + " 2nd, 3rd, and 4th Wednesday 5pm - 7pm"));
+                .snippet("604 E. Armory Ave. Champaign, IL 61801" + " 2nd, 3rd, and 4th Wednesday 5pm - 7pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(newmanShares));
 
         LatLng restorationUrbanMinistries = new LatLng(40.1289,-88.2789);

@@ -60,7 +60,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="216dp"
         android:background="#0227FF"
-        android:text="If you are affiliated with a local food pantry, please fill out this form!"
+        android:text="Donate Food"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -53,13 +54,17 @@ public class addFoodLocation extends AppCompatActivity {
         EditText extraInfo =  findViewById(R.id.pickupTime);
         String pickupTime = extraInfo.getText().toString();
 
-        if (getLocationFromAddress(this, foodPickupLocation) != null) {
-            LatLng foodSource = getLocationFromAddress(this,foodPickupLocation);
-            System.out.println(foodSource.toString());
-            //MapsActivity.mMap.addMarker(new MarkerOptions().position(foodSource).title(nameContact));
-        } else {
-            System.out.println("locationNull");
-        }
+        //if (getLocationFromAddress(this, foodPickupLocation) != null) {
+           // LatLng foodSource = getLocationFromAddress(this,foodPickupLocation);
+           // System.out.println(foodSource.toString());
+            //MapsActivity map = new MapsActivity();
+           // map.addLocationToMap(foodSource, nameContact);
+        //} else {
+         //   System.out.println("locationNull");
+       // }
+        LatLng p1 = new LatLng(40.1057, -88.2229);
+        MapsActivity map = new MapsActivity();
+        map.addLocationToMap(p1, "practice run");
     }
 
     public LatLng getLocationFromAddress(Context context, String straddress) {

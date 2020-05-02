@@ -93,6 +93,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(dailyBread).title("Daily Bread Soup Kitchen")
                 .snippet("116 N 1st St, Champaign, IL 61820" + " Everyday 11:00am - 12:30pm"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dailyBread));
+
+        LatLng newmanShares = new LatLng(39.7986, -87.9859);
+        mMap.addMarker(new MarkerOptions().position(newmanShares).title("Newman Shares Food Pantry")
+                .snippet("604 F. Armory Ave. Champaign, IL 61801" + " 2nd, 3rd, and 4th Wednesday 5pm - 7pm"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(newmanShares));
+
+        LatLng restorationUrbanMinistries = new LatLng(40.1289,-88.2789);
+        mMap.addMarker(new MarkerOptions().position(restorationUrbanMinistries).title("Restoration Urban Ministries")
+                .snippet("1213 Parkland Court Champaign, IL 61801" + " Mon, Tues, Thurs, Fri, 10am-1pm "));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(restorationUrbanMinistries));
+
+        LatLng salvationArmyFoodPantry = new LatLng(40.141380,-88.23805);
+        mMap.addMarker(new MarkerOptions().position(salvationArmyFoodPantry).title("Salvation Army Pantry")
+                .snippet("2212 North Market Street Champaign, IL 61824" + " Mon, Wed, Thurs, Fri 9am-4pm/Tues 9am - 5pm"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(salvationArmyFoodPantry));
+
+        LatLng emmanualMemorialEpiscopal = new LatLng(40.11634,-88.24550);
+        mMap.addMarker(new MarkerOptions().position(emmanualMemorialEpiscopal).title("Emmanual Memorial Episcopal Church")
+                .snippet("208 W University Ave Champaign, IL 61824" + " Mon - Fri (9am - 10am)"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(emmanualMemorialEpiscopal));
+
+
+    }
+
+    public void addLocationToMap(LatLng addPoint, String addName) {
+        mMap.addMarker(new MarkerOptions().position(addPoint).title(addName));
     }
 
     public GoogleMap getmMap() {

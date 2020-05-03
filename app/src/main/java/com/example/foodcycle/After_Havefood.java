@@ -1,6 +1,5 @@
 package com.example.foodcycle;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +37,7 @@ public class After_Havefood extends AppCompatActivity  implements RecyclerViewAd
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
+        /**
         goHome = findViewById(R.id.goHome);
         goHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +47,7 @@ public class After_Havefood extends AppCompatActivity  implements RecyclerViewAd
 ;               startActivity(returnHome);
             }
         });
+         */
 
     }
 

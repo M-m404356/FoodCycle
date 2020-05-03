@@ -10,24 +10,11 @@
     android:background="#8BC34A"
     android:paddingTop="?attr/actionBarSize">
 
-    <Button
-        android:id="@+id/goHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="#00F5EEEE"
-        android:text="@string/title_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodPlaces"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="50dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
